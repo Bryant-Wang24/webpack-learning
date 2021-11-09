@@ -8,6 +8,8 @@ module.exports = {
         app:'./src/index.js',
         print:'./src/print.js'
     },
+    // JavaScript 提供了 source map 功能，可以将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
+    devtool: 'inline-source-map',//source-map详细内容： 'https://v4.webpack.docschina.org/configuration/devtool'
     plugins:[
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
