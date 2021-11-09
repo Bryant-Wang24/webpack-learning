@@ -3,21 +3,23 @@ import printMe from './print.js';
 function component() {
     let element = document.createElement('div');
     var btn = document.createElement('button');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     btn.innerHTML = '点击这里，然后查看 console！';
     btn.onclick = printMe;
     element.appendChild(btn);
-    // lodash，现在由此脚本导入
-    // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    
     // element.classList.add('hello');
   
     return element;
   }
   
   document.body.appendChild(component());
-
-  if (module.hot) {
-       module.hot.accept('./print.js', function() {
-         console.log('Accepting the updated printMe module!');
+// console.log('哈哈',import.meta.webpackHot.accept());
+  if (import.meta.webpackHot) {
+    console.log('执行');
+    import.meta.webpackHot.accept('./print.js', function() {
+         console.log('更新后触发的函数');
          printMe();
        })
      }

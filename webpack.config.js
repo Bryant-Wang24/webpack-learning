@@ -9,12 +9,12 @@ module.exports = {
         app: './src/index.js'
     },
     // JavaScript 提供了 source map 功能，可以将编译后的代码映射回原始源代码。如果一个错误来自于 b.js，source map 就会明确的告诉你。
-    devtool: 'inline-source-map',//source-map详细内容： 'https://v4.webpack.docschina.org/configuration/devtool'
+    // devtool: 'inline-source-map',//source-map详细内容： 'https://v4.webpack.docschina.org/configuration/devtool'
 
 //    告知 webpack-dev-server，将 dist 目录下的文件 serve 到 localhost:8080 下。（译注：serve，将资源作为 server 的可访问文件）
     devServer:{
-        hot: true
-        // contentBase: './dist'
+        hot: true,
+        static: './dist'
     },
 
     plugins:[
