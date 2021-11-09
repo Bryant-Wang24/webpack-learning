@@ -1,15 +1,14 @@
 import _ from 'lodash';
+import printMe from './print.js';
 function component() {
     let element = document.createElement('div');
-  
+    var btn = document.createElement('button');
+    btn.innerHTML = '点击这里，然后查看 console！';
+    btn.onclick = printMe;
+    element.appendChild(btn);
     // lodash，现在由此脚本导入
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-
-    // 将图像添加到已经存在的div中
-    var myIcon = new Image()
-    myIcon.src = Icon
-    element.appendChild(myIcon)
+    // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    // element.classList.add('hello');
   
     return element;
   }
