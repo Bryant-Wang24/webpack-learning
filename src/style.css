@@ -1,0 +1,7 @@
+/* 借助于 style-loader，使用模块热替换来加载 CSS 实际上极其简单。
+此 loader 在幕后使用了 module.hot.accept，在 CSS 依赖模块更新之后，
+会将其 patch(修补) 到 <style> 标签中。 */
+body {
+  border: 1px solid red;
+  background: pink;
+}
